@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class InsultGenerator {
 
@@ -13,14 +14,13 @@ public class InsultGenerator {
         String theInsult = "";
 
         String databaseURL = "jdbc:postgresql://";
-        databaseURL += System.getenv("POSTGRESQL_SERVICE_HOST");
-        databaseURL += "/" + System.getenv("POSTGRESQL_DATABASE");
+        databaseURL += "192.168.122.185";
+        databaseURL += "/" + "insults";
 
-        String username = System.getenv("POSTGRESQL_USER");
-        String password = System.getenv("PGPASSWORD");
+        String username = "insult";
+        String password = "insult";
 
         try {
-            /*
             Connection connection = DriverManager.getConnection(databaseURL, username, password);
 
             if (connection != null) {
@@ -37,10 +37,9 @@ public class InsultGenerator {
                 rs.close();
                 connection.close();
             }
-             */
         } catch (Exception e) {
-            //return "Database connection problem!";
-            return "databaseURL=" + databaseURL + "-username=" + username + "-password=" + password;
+            return "Database connection problem!";
+            //return "databaseURL=" + databaseURL + "-username=" + username + "-password=" + password;
         }
         return theInsult;
     }
