@@ -13,8 +13,9 @@ public class InsultGenerator {
         String article = "an";
         String theInsult = "";
 
+        //jdbc:postgresql://host:port/database
         String databaseURL = "jdbc:postgresql://";
-        databaseURL += "192.168.122.185:5432";
+        databaseURL += "localhost:5432";
         databaseURL += "/" + "insults";
 
         String username = "insult";
