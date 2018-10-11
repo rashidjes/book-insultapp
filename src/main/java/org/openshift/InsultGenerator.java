@@ -15,11 +15,11 @@ public class InsultGenerator {
 
         try {
             String databaseURL = "jdbc:postgresql://";
-            databaseURL += System.getenv("POSTGRESQL_SERVICE_HOST");
-            databaseURL += "/" + System.getenv("POSTGRESQL_DATABASE");
+            databaseURL += "192.168.122.185";
+            databaseURL += "/" + "insults";
 
-            String username = System.getenv("POSTGRESQL_USER");
-            String password = System.getenv("PGPASSWORD");
+            String username = "insult";
+            String password = "insult";
 
             //parámetros de conexion
             JOptionPane.showMessageDialog(null, databaseURL);
