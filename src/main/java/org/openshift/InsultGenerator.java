@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class InsultGenerator {
 
@@ -21,9 +22,9 @@ public class InsultGenerator {
             String password = System.getenv("PGPASSWORD");
             
             //parámetros de conexion
-            System.out.println(databaseURL);
-            System.out.println(username);
-            System.out.println(password);
+            JOptionPane.showMessageDialog(null, databaseURL);
+            JOptionPane.showMessageDialog(null, username);
+            JOptionPane.showMessageDialog(null, password);
             
             Connection connection = DriverManager.getConnection(databaseURL, username, password);
 
