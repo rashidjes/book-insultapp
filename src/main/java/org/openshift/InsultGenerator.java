@@ -13,14 +13,14 @@ public class InsultGenerator {
         String article = "an";
         String theInsult = "";
 
+        String databaseURL = "jdbc:postgresql://";
+        databaseURL += "192.168.122.185";
+        databaseURL += "/" + "insults";
+
+        String username = "insult";
+        String password = "insult";
+
         try {
-            String databaseURL = "jdbc:postgresql://";
-            databaseURL += "192.168.122.185";
-            databaseURL += "/" + "insults";
-
-            String username = "insult";
-            String password = "insult";
-
             //parámetros de conexion
             JOptionPane.showMessageDialog(null, databaseURL);
             JOptionPane.showMessageDialog(null, username);
@@ -44,7 +44,7 @@ public class InsultGenerator {
             }
              */
         } catch (Exception e) {
-            return "Database connection problem!";
+            return "databaseURL=" + databaseURL + "-username=" + username + "-password=" + password;
         }
         return theInsult;
     }
